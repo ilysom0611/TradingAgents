@@ -171,6 +171,9 @@ def select_shallow_thinking_agent(provider) -> str:
             ("GPT-OSS:latest (20B, local)", "gpt-oss:latest"),
             ("GLM-4.7-Flash:latest (30B, local)", "glm-4.7-flash:latest"),
         ],
+        "minimax": [
+            ("MiniMax-M2.5 - Balanced, cost-effective", "MiniMax-M2.5"),
+        ],
     }
 
     choice = questionary.select(
@@ -238,6 +241,9 @@ def select_deep_thinking_agent(provider) -> str:
             ("GPT-OSS:latest (20B, local)", "gpt-oss:latest"),
             ("Qwen3:latest (8B, local)", "qwen3:latest"),
         ],
+        "minimax": [
+            ("MiniMax-M2.5 - Balanced, cost-effective", "MiniMax-M2.5"),
+        ],
     }
 
     choice = questionary.select(
@@ -272,6 +278,7 @@ def select_llm_provider() -> tuple[str, str]:
         ("xAI", "https://api.x.ai/v1"),
         ("Openrouter", "https://openrouter.ai/api/v1"),
         ("Ollama", "http://localhost:11434/v1"),
+        ("MiniMax", "https://api.minimax.io/v1"),
     ]
     
     choice = questionary.select(
